@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    font-family: "Arial";
+}
+#frontview {
+    height: 100vh;
+    background: white;
+}
+.grid {
+    justify-content: center;
+    flex-flow: row wrap;
+    display: flex;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    padding-top: 87px;
+    padding-bottom: 30px;
+}
+#container > div > div > a {
+    text-decoration: none;
+    color: rgb(157, 157, 157);
+}
+#container {
+    padding-bottom: 60px;
+}
+#title {
+    visibility: hidden;
+    font-size: 12px;
+}
+
+.grid .image img {
+    width: 315px;
+    max-height: 315px;
+    /* margin-top: 20px; */
+    text-align: center;
+    object-position: center;
+    object-fit: contain;
+}
+
+.grid .image {
+    margin: 20px;
+    text-align: center;
+    flex: auto;
+    border: 1px solid transparent;
+}
+
+.grid .image:hover {
+    border: 1px solid rgb(215, 215, 215);
+}
+.grid .image:hover #title {
+    visibility: visible;
+}
+.input {
+    padding-left: 150px;
+    padding-top: 52px;
+    padding-bottom: 55px;
+}
+.fixed-search {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+}
+
+.input input {
+    color: rgb(157, 157, 157);
+    font-size: 12px;
+    line-height: 1.4;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgb(159, 159, 159);
+    width: 200px;
+    margin-right: 13px;
+}
+
+.input input:hover {
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.input button {
+    border: 1px solid black;
+    color: black;
+    height: 23px;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.input button:hover {
+    color: white;
+    background: black;
+}
+.middle {
+    display: flex;
+    justify-content: center;
+}
+.more {
+    border: 1px solid black;
+    color: black;
+    height: 23px;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.more:hover {
+    color: white;
+    background: black;
+}
+.input .fileButton {
+    border: 1px solid black;
+    font-size: 13px;
+    margin-right: 6px;
+}
+.input .fileButton:hover {
+    background: #f1f1f1;
+}
+
+input[type="file"] {
+    display: none;
+}
+.fileButton {
+    font-weight: 100;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.header {
+    margin: 0;
+    padding-left: 150px;
+    padding-top: 87px;
+    padding-bottom: 60px;
+}
+#close img {
+    height: 20px;
+    float: right;
+    max-width: 30vw;
+}
+#close img:hover {
+    transform: scale(1.2);
+}
+.wrapper {
+    overflow: auto;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: white;
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: fixed;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-right {
+    padding-right: 50px;
+
+    height: 100%;
+}
+.imageBig img {
+    position: fixed;
+    max-height: 85vh;
+    max-width: 583px;
+    margin-right: 20px;
+    object-fit: contain;
+    object-fit: scale-down;
+}
+.description {
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    background: rgb(250, 250, 250);
+}
+.description p:first-child {
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.description p:nth-child(2) {
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: -11px;
+}
+.description p:nth-child(3) {
+    font-size: 12px;
+    margin-top: -11px;
+    color: rgb(159, 159, 159);
+}
+.comment-input {
+    padding: 20px;
+    background: rgb(250, 250, 250);
+}
+.comment-input p {
+    /* border-bottom: 1px solid rgb(159, 159, 159); */
+    /* margin-bottom: 40px;
+    margin-right: 40px; */
+    font-size: 16px;
+    font-weight: bold;
+    /* padding-bottom: 10px; */
+}
+
+.comment-input input {
+    color: rgb(157, 157, 157);
+    font-size: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgb(159, 159, 159);
+    width: 100%;
+}
+.comment-input input:hover {
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.comment-input button {
+    border: 1px solid black;
+    color: black;
+    height: 23px;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comment-input button:hover {
+    color: white;
+    background: black;
+}
+
+#delete {
+    border: 1px solid black;
+    color: black;
+    height: 23px;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 120px;
+}
+#delete:hover {
+    color: white;
+    background: black;
+}
+
+.comment-container {
+}
+.commentNew {
+    padding-left: 10px;
+    background: rgb(231, 231, 231);
+    margin-top: 10px;
+}
+#main
+    > div.wrapper
+    > div.modal-container
+    > div.container-right
+    > div.comment-container
+    > div
+    > div
+    > h6
+    > span {
+    font-weight: lighter;
+}
+#main
+    > div.wrapper
+    > div.modal-container
+    > div.container-right
+    > div.comment-container
+    > div
+    > div
+    > h6 {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.footer img {
+    height: 20px;
+    margin-bottom: 30px;
+}
+.footer {
+    padding-left: 150px;
+    height: 50px;
+    border-top: 1px solid rgb(159, 159, 159);
+    padding-top: 30px;
+}
+.footer img:hover {
+    transform: scale(1.2);
+}

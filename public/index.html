@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+
+    <div id="frontview">
+
+
+
+        <div id="main">
+
+            <modal v-if="imageId" :image-id="imageId" v-on:close2="close3" @delete="reload"></modal>
+
+
+            <div class="header">
+                <h1>{{heading}}</h1>
+
+            </div>
+
+
+            <div class="input" id="input">
+                <input name="username" v-model="username" placeholder="username">
+                <input name="title" v-model="title" placeholder="title">
+                <input name="desc" v-model="desc" placeholder="description">
+                <label for="file" class="fileButton">IMAGE UPLOAD</label>
+                <input id="file" type="file" accept="image/*" name="file" @change="handleFileChange">
+                <button @click="upload">SUBMIT</button>
+            </div>
+
+
+
+            <div id="container">
+
+                <div v-if="images.length" class="grid">
+
+
+                    <div v-for="image in images" class="image" :key="image.id" @click="makeModalAppear(image.id)" @delete="reload">
+                        <a :href=" '#' + image.id">
+                    <img :src="image.url"></img>
+                    <p id="title">{{image.title}}</p>
+                </a>
+                    </div>
+
+                </div>
+                <div class="middle">
+                    <button class="more" v-if="hasMore" @click="getmore">MORE</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+
+            <a href="https://github.com/spicedacademy/sage-imageboard/tree/marina"><img src="./noun_code_45868.png" alt="github code">
+    </a>
+
+            <br>
+            <a href="https://www.linkedin.com/in/marina-wilhelm/"><img src="./noun_Woman_1903202.png" alt="linkedin"></a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script type="text/x-template" id="modal">
+        <div class="wrapper">
+            <div id="close" @click="close1"><img src="./noun_Delete_2002050.png" alt="close"></div>
+            <div class="modal-container">
+
+                <div class="imageBig">
+                    <img :src="image.url"></img>
+
+
+                </div>
+
+                <div class="container-right">
+                    <div class="description">
+
+
+                        <p>{{image.title}}</p>
+
+                        <p>{{image.description}}</p>
+                        <p>{{image.created_at}} by {{image.username}}</p>
+                        <button id="delete" @click="deleteimage">DELETE IMAGE</button>
+                    </div>
+
+
+
+
+                    <div class="comment-input">
+                        <p>ADD A COMMENT:</p>
+
+                        <input name="comment" v-model="comment" placeholder="comment"><br>
+                        <input name="username" v-model="commentator" placeholder="username"><br>
+                        <button @click="uploadcomment">SUBMIT</button>
+
+                    </div>
+
+                    <div class="comment-container">
+
+                        <div v-if="comments.length">
+                            <div v-for="comment in comments" class="commentNew" @click="upload-comment">
+                                <h6>{{comment.comment}} <br>
+                                        <span>uploaded by {{comment.username}} on {{comment.created_at}}</span>
+                                    </h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </script>
+
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
